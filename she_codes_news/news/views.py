@@ -1,5 +1,9 @@
 from django.views import generic
+from django.urls import reverse_lazy
 from .models import NewsStory
+from .forms import StoryForm
+
+# ABOVE ^^ Step. 1. Add a view to the form (Forms)
 
 
 class IndexView(generic.ListView):
@@ -20,3 +24,10 @@ class StoryView(generic.DetailView):
     model = NewsStory
     template_name = 'news/story.html'
     context_object_name = 'story'
+
+# Step 1. Add a view to use the form (Forms)
+class AddStoryView(generic.CreateView):
+    form_class = StoryForm
+    context_object_name = 'storyForm'
+    template_name = 'news/createStory.html'
+    success_url = reverse_lazy('news:index')

@@ -1,8 +1,7 @@
+<!-- Step 13. Style the Story Page -->
 {% extends "base.html" %} {% load static %} {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{% static'news/styles.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}" />
 {% endblock %} {% block content %}
-
-<!-- ABOVE ^^ Step 13. Style the Story Page -->
 
 <div id="story-wrapper">
   <h2>{{ story.title }}</h2>

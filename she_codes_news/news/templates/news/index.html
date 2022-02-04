@@ -1,27 +1,26 @@
+<!-- Step 11. Load stylesheets into the news app index -->
 {% extends "base.html" %} {% load static %} {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}" />
 {% endblock %} {% block content %}
 
-<!-- ABOVE ^^ Step 11. Load stylesheets into the news app index -->
+<!-- Step 3. Add a link to the form from the home page (Forms) -->
+<a href="{% url 'news:newStory' %}">Write New Story</a>
 
 <h2>Latest News</h2>
 
 <div id="latest-stories">
-  {% if latest_stories %} {% for story in latest_stories %} {% include"
-  ./storyCard.html" with story=storyposition=forloop.counter %}
-  <!-- ABOVE ^^ Step 12. Use story card template -->
-  <p>{{ story.title }}</p>
-  {% endfor %} {% else %}
+  <!-- Step 12. Use story card template -->
+  {% if latest_stories %} {% for story in latest_stories %} {% include
+  "./storyCard.html" with story=story position=forloop.counter %} {% endfor %}
+  {%else %}
   <p>No stories are available.</p>
   {% endif %}
 </div>
 
 <div id="all-stories">
-  {% if latest_stories %} {% for story in all_stories %} {% include
-  "./storyCard.html" with story=story %}
-  <!-- ABOVE ^^ Step 12. Use story card template -->
-  <p>{{ story.title }}</p>
-  {% endfor %} {% else %}
+  <!-- Step 12. Use story card template -->
+  {% if all_stories %} {% for story in all_stories %} {% include
+  "./storyCard.html" with story=story %} {% endfor %} {% else %}
   <p>No stories are available.</p>
   {% endif %}
 </div>
