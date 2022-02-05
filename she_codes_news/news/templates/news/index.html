@@ -10,8 +10,10 @@
 
 <div id="latest-stories">
   <!-- Step 12. Use story card template -->
-  {% if latest_stories %} {% for story in latest_stories %} {% include
-  "./storyCard.html" with story=story position=forloop.counter %} {% endfor %}
+  {% if latest_stories %} 
+    {% for story in latest_stories %} 
+      {% include "./storyCard.html" with story=story position=forloop.counter %} 
+      {% endfor %}
   {% else %}
   <p>No stories are available.</p>
   {% endif %}
@@ -19,8 +21,11 @@
 
 <div id="all-stories">
   <!-- Step 12. Use story card template -->
-  {% if all_stories %} {% for story in all_stories %} {% include
-  "./storyCard.html" with story=story %} {% endfor %} {% else %}
+  {% if all_stories %} 
+    {% for story in all_stories %} 
+    {% include "./storyCard.html" with story=story %} 
+  {% endfor %} 
+    {% else %}
   <p>No stories are available.</p>
   {% endif %}
 </div>

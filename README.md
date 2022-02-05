@@ -38,11 +38,20 @@ IMPORTANT > Check server >>
 
 ---
 
-Fix this error!:
-"You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
-Run "python manage.py migrate" to apply them."
-
----
-
 Everytime you make changes to the 'models' you need to run:
-"python3 manage.py makemigrations" (enter eg. polls)
+1."python3 manage.py makemigrations"
+2. Run "python manage.py migrate" to apply them.
+
+
+--------------
+Ideas to Improve Website:
+1. Complete Step 9
+2. Create User Profile
+
+First step: Will fill out the "Create Account" form and then:
+    Need to redirect them to a page that will allow them to fill out the following:
+    (HTML files: userbioForm.html >> userProfile.html)
+        - Full Name
+        - Add a profile photo
+        - Bio
+        - Link to Social Media

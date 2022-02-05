@@ -1,5 +1,7 @@
 <!-- Step 1. Fill in the template (Forms) -->
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+
+{% block content %}
 
 <form action="" method="post">
   {% csrf_token %} {{ form.as_p }}
