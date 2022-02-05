@@ -12,7 +12,7 @@
   <!-- Step 12. Use story card template -->
   {% if latest_stories %} {% for story in latest_stories %} {% include
   "./storyCard.html" with story=story position=forloop.counter %} {% endfor %}
-  {%else %}
+  {% else %}
   <p>No stories are available.</p>
   {% endif %}
 </div>

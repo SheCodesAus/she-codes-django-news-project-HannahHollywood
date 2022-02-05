@@ -20,4 +20,6 @@ urlpatterns = [
     # Step 7. Update project urls for news app
     path('news/', include('news.urls')),
     path('admin/', admin.site.urls),
+    # Step 5. Add User Apps to the URLS list
+    path('users/', include('django.contrib.auth.urls')),
 ]
