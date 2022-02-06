@@ -138,3 +138,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Step 7. Add a Login/Logout Redirect
 LOGIN_REDIRECT_URL = 'news:index'
 LOGOUT_REDIRECT_URL = 'news:index'
+
+# # User Account Creation Redirect:
+# CREATE_ACCOUNT_URL = 'users:userbioForm'
