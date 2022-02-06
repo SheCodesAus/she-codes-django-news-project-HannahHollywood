@@ -2,6 +2,8 @@
 
 {% block content %}
   <h2>Create Author Profile</h2>
+  <h3>Welcome {{ user.username }} 👩‍💻</h3>
+  <p>Complete your profile by uploading a photo and telling other budding authors a little bit more about yourself!</p>
   <form method="post">
     {% csrf_token %}
     {% for field in form %}

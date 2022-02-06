@@ -5,7 +5,6 @@ from .forms import StoryForm
 
 # ABOVE ^^ Step. 1. Add a view to the form (Forms)
 
-
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
 

@@ -45,16 +45,16 @@ Everytime you make changes to the 'models' you need to run:
 
 --------------
 Ideas to Improve Website:
-1. Complete Step 9
+1. Complete Step 9 (DONE)
 
 2. Create User Profile
-
-First step: Will fill out the "Create Account" form and then:
+First step: User will fill out the "Sign Up" form and then:
     Need to redirect them to a page that will allow them to fill out the following:
-    (HTML files: userbioForm.html >> userProfile.html)
-    (Create CustomUserBioForm class)
+    (HTML files: createProfile.html >> userProfile.html)
+    (Create CreateUserProfileForm class)
         - Add a profile photo
         - Bio
         - Link to Social Media
+        - Location
 
-Notes: need a new model: User Profile?
+3. Link to User Profile from Home (DONE - mostly..)

@@ -1,7 +1,7 @@
 # Step 3. Create Forms for User Login & Updates (User Apps)
 from cgitb import html
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, CreateUserProfileForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
 
 class CustomUserCreationForm(UserCreationForm):
@@ -16,27 +16,26 @@ class CustomUserCreationForm(UserCreationForm):
 # -----------------------
 
 class CreateUserProfileForm(forms.Form):
-    social_link = forms.CharField(max_length=30)
+    attach_photo = forms.ImageField()
+    location = forms.CharField(max_length=30)
+    social__media_link = forms.URLField(initial='http://')
     bio = forms.CharField(
         max_length=2000,
         widget=forms.Textarea(),
-        help_text='Tell us about yourself!'
+        help_text='Who are you? What do you like to write about?'
     )
-    # source = forms.CharField(       # A hidden input for internal use
-    #     max_length=50,              # tell from which page the user sent the message
-    #     widget=forms.HiddenInput()
-    # )
 
     def clean(self):
         cleaned_data = super(CreateUserProfileForm, self).clean()
-        social_link = cleaned_data.get('social-link')
+        location = cleaned_data.get('location')
+        social_media_link = cleaned_data.get('social-link')
         bio = cleaned_data.get('bio')
-        if not social_link and not bio:
+        if not location and not social_media_link and not bio:
             raise forms.ValidationError('You have to write something!')
 
     class Meta:
         model = CustomUser
-        fields = ['social_link', 'bio',]
+        fields = ['location', 'attach_photo', 'social_media_link', 'bio',]
 
 #  ----------------------
 

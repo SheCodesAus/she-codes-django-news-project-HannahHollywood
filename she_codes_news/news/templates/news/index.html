@@ -1,7 +1,12 @@
 <!-- Step 11. Load stylesheets into the news app index -->
-{% extends "base.html" %} {% load static %} {% block stylesheets %}
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}" />
-{% endblock %} {% block content %}
+{% endblock %} 
+
+{% block content %}
 
 <!-- Step 3. Add a link to the form from the home page (Forms) -->
 <a href="{% url 'news:newStory' %}">Write New Story</a>
