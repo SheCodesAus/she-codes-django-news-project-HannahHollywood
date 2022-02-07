@@ -16,9 +16,9 @@ class CustomUserCreationForm(UserCreationForm):
 # -----------------------
 
 class CreateUserProfileForm(forms.Form):
-    attach_photo = forms.ImageField()
+    avatar = forms.URLField(initial='http://')
     location = forms.CharField(max_length=30)
-    social__media_link = forms.URLField(initial='http://')
+    social_media_link = forms.URLField(initial='http://')
     bio = forms.CharField(
         max_length=2000,
         widget=forms.Textarea(),
@@ -27,15 +27,16 @@ class CreateUserProfileForm(forms.Form):
 
     def clean(self):
         cleaned_data = super(CreateUserProfileForm, self).clean()
+        avatar = cleaned_data.get('avatar')
         location = cleaned_data.get('location')
         social_media_link = cleaned_data.get('social-link')
         bio = cleaned_data.get('bio')
-        if not location and not social_media_link and not bio:
+        if not avatar and not location and not social_media_link and not bio:
             raise forms.ValidationError('You have to write something!')
 
     class Meta:
         model = CustomUser
-        fields = ['location', 'attach_photo', 'social_media_link', 'bio',]
+        fields = ['location', 'avatar', 'social_media_link', 'bio',]
 
 #  ----------------------
 
