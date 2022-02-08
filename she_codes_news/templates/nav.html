@@ -1,5 +1,9 @@
 <nav>
   <a href="{% url 'news:index' %}">Home</a>
+{% comment %} 
+  {% if request.user.not_authenticated %}
+  <a href="{% url 'user:createAccount' %}">Create Account</a> {% endcomment %}
+  
   {% if request.user.is_authenticated %}
     <a href="#">Welcome: {{ user.username }}!</a>
     {% comment %} To edit later:

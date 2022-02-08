@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
   <h2>Create Author Profile</h2>
   <h3>Welcome {{ user.username }} 👩‍💻</h3>
   <p>Complete your profile by uploading a photo and telling other budding authors a little bit more about yourself!</p>
@@ -18,6 +19,10 @@
         {% endfor %}
       </p>
     {% endfor %}
-    <button type="submit">Confirm Profile Info</button>
+    <button type="submit" name="confirm">Confirm Profile Info</button>
+    </br>
+  </br>
+  <button type="submit" name="skip">Skip</button>
   </form>
+
 {% endblock %}

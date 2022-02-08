@@ -25,18 +25,16 @@ class CreateUserProfileForm(forms.Form):
         help_text='Who are you? What do you like to write about?'
     )
 
-    def clean(self):
-        cleaned_data = super(CreateUserProfileForm, self).clean()
-        avatar = cleaned_data.get('avatar')
-        location = cleaned_data.get('location')
-        social_media_link = cleaned_data.get('social-link')
-        bio = cleaned_data.get('bio')
-        if not avatar and not location and not social_media_link and not bio:
-            raise forms.ValidationError('You have to write something!')
+    # def clean(self):
+    #     cleaned_data = super(CreateUserProfileForm, self).clean()
+    #     avatar = cleaned_data.get('avatar')
+    #     location = cleaned_data.get('location')
+    #     social_media_link = cleaned_data.get('social-link')
+    #     bio = cleaned_data.get('bio')
 
     class Meta:
         model = CustomUser
-        fields = ['location', 'avatar', 'social_media_link', 'bio',]
+        fields = ['avatar', 'location', 'social_media_link', 'bio',]
 
 #  ----------------------
 

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 #Step 9. Create 'view' for account page app (User App)
 from django.urls import reverse_lazy
@@ -16,13 +16,17 @@ class CreateAccountView(CreateView):
 
 class CreateUserProfileView(FormView):
     form_class = CreateUserProfileForm
-    success_url = reverse_lazy('users:ProfileHome')
+    success_url = reverse_lazy('users:profileHome')
     template_name = 'users/createProfile.html'
+
+    # def complete_form(request):
+    #     if 'skip' in request.POST:
+    #         return redirect('userProfileHome.html')
 
 # --------------------------------------------------------------------
 
 # Display the Custom User Profile page
-class UserProfileView(generic.DetailView):
-    model = CustomUser
-    template_name = 'users/userProfileHome.html'
-    # context_object_name = 'user'
+class UserProfileView(CreateView):
+    form_class = CustomUserCreationForm
+    success_url = reverse_lazy('users:profileHome')
+    template_name = 'users/createAccount.html'
