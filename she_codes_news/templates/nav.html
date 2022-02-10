@@ -1,16 +1,15 @@
 <nav>
   <a href="{% url 'news:index' %}">Home</a>
-{% comment %} 
-  {% if request.user.not_authenticated %}
-  <a href="{% url 'user:createAccount' %}">Create Account</a> {% endcomment %}
   
   {% if request.user.is_authenticated %}
     <a href="#">Welcome: {{ user.username }}!</a>
-    {% comment %} To edit later:
-        link to User Profile (currently edit screen) {% endcomment %}
-    <a href="{% url 'users:createProfile' %}"">Your Profile</a>
+
+    <a href="{% url 'users:profileHome' %}">Your Profile</a>
+
     <a href="{% url 'logout' %}">Logout</a>
+
   {% else %}
     <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'users:createAccount' %}">Create Account</a>
   {% endif %}
 </nav>

@@ -19,14 +19,10 @@ class CreateUserProfileView(FormView):
     success_url = reverse_lazy('users:profileHome')
     template_name = 'users/createProfile.html'
 
-    # def complete_form(request):
-    #     if 'skip' in request.POST:
-    #         return redirect('userProfileHome.html')
-
 # --------------------------------------------------------------------
 
 # Display the Custom User Profile page
 class UserProfileView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('users:profileHome')
-    template_name = 'users/createAccount.html'
+    template_name = 'users/userProfileHome.html'

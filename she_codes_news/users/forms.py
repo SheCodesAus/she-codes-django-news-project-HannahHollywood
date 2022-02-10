@@ -16,12 +16,13 @@ class CustomUserCreationForm(UserCreationForm):
 # -----------------------
 
 class CreateUserProfileForm(forms.Form):
-    avatar = forms.URLField(initial='http://')
-    location = forms.CharField(max_length=30)
-    social_media_link = forms.URLField(initial='http://')
+    avatar = forms.URLField(help_text='Enter URL', required=False)
+    location = forms.CharField(max_length=30, required=False)
+    social_media_link = forms.URLField(help_text='Enter URL', required=False)
     bio = forms.CharField(
         max_length=2000,
         widget=forms.Textarea(),
+        required=False,
         help_text='Who are you? What do you like to write about?'
     )
 
