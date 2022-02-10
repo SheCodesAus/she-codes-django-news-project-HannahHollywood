@@ -1,7 +1,6 @@
 # Step 9. Create urls.py & create URLS for User App
 from django.urls import path
-from .views import CreateAccountView, CreateUserProfileView, UserProfileView
-from django.views.generic.detail import DetailView
+from .views import CreateAccountView, CreateUserProfileView, get_user_profile
 
 app_name = 'users'
 
@@ -10,5 +9,5 @@ urlpatterns = [
     # Linking create-account page with the next page, which is create-profile
     path('create-profile/', CreateUserProfileView.as_view(), name='createProfile'),
     # Directing the create-profile page to the users completed profile
-    path('profile-home/', UserProfileView.as_view(), name='profileHome')
+    path('profile-home/', get_user_profile, name='profileHome')
 ]

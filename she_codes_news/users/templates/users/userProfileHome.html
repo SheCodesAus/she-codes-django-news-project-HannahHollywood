@@ -2,6 +2,18 @@
 
 {% block content %}
 
-<h2>Welcome to {{ user.username }}'s' Page!</h2>
+<h2>Welcome to {{ user.username }}s Page!</h2> 
+
+{% comment %} <a href="{% url 'news:newStory' %}">Write New Story</a> {% endcomment %}
+
+<div id="stories">
+  {% if stories %} 
+    {% for story in stories %} 
+      {% include "./storyCard.html" with story=story position=forloop.counter %} 
+      {% endfor %}
+  {% else %}
+  <p>No stories are available.</p>
+  {% endif %}
+</div>
 
 {% endblock %}

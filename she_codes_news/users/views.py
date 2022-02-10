@@ -1,12 +1,10 @@
-from django.shortcuts import render, redirect
-
-#Step 9. Create 'view' for account page app (User App)
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, FormView
 from django.views import generic
-from django.views.generic.detail import DetailView
 from .models import CustomUser
 from .forms import CustomUserCreationForm, CreateUserProfileForm
+from news.models import NewsStory
 
 # -------------------------------------------------------------------
 class CreateAccountView(CreateView):
@@ -22,7 +20,11 @@ class CreateUserProfileView(FormView):
 # --------------------------------------------------------------------
 
 # Display the Custom User Profile page
-class UserProfileView(CreateView):
-    form_class = CustomUserCreationForm
-    success_url = reverse_lazy('users:profileHome')
+class UserProfileView(generic.DetailView):
+    model = CustomUser
     template_name = 'users/userProfileHome.html'
+
+def get_user_profile(request):
+    user = request.user
+    stories = NewsStory.objects.filter(author=request.user.id)
+    return render(request, 'users/userProfileHome.html', {"user": request.user, "stories": stories})
