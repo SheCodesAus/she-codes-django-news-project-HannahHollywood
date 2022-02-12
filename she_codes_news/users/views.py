@@ -38,3 +38,4 @@ class EditUserProfileView(UpdateView):
 class UserProfileView(generic.DetailView):
     model = CustomUser
     template_name = 'users/userProfileHome.html'
+    # context_object_name = 'profile'

@@ -9,6 +9,19 @@
     <button><a href="{% url 'news:newStory' %}">!! Write New Story !!</a></button>
 </div>
 
+<div class="user-profile-info">
+  <ul>
+    <li>{{ customuser.avatar }}</li>
+    <li>Location: {{ customuser.location }}</li>
+    <li>Follow {{ customuser.username }} Here: {{ customuser.social_media_link }}</li>
+  </ul>
+
+  <h4>About {{ customuser.username }}:</h4>
+  <p>
+    {{ customuser.bio }}
+  </p>
+</div>
+
 <div id="stories">
   {% if customuser.newsstory_set.all %} 
     {% for story in customuser.newsstory_set.all %} 
@@ -19,6 +32,11 @@
   {% endif %}
 </div>
 
-<button><a href="{% url 'users:editProfile' %}">Edit Profile</a></button>
+{% comment %} NOTE: need to make it so that when the user is logged in they can edit the page {% endcomment %}
+{% comment %} BUT: if they go to someone else's profile, the edit button disappears {% endcomment %}
+{% if request.user == customuser %}
+  <button><a href="{% url 'users:editProfile' %}">Edit Profile</a></button>
+{% else %}
+{% endif %}
 
 {% endblock %}
