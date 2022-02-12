@@ -1,8 +1,14 @@
-# Step 3. Create Forms for User Login & Updates (User Apps)
-from cgitb import html
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
+
+class CustomUserChangeForm(UserChangeForm):
+
+    class Meta:
+        model = CustomUser
+        fields = ['username', 'email']
+
+# -----------------------
 
 class CustomUserCreationForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
@@ -15,7 +21,7 @@ class CustomUserCreationForm(UserCreationForm):
 
 # -----------------------
 
-class CreateUserProfileForm(forms.Form):
+class EditUserProfileForm(forms.ModelForm):
     avatar = forms.URLField(help_text='Enter URL', required=False)
     location = forms.CharField(max_length=30, required=False)
     social_media_link = forms.URLField(help_text='Enter URL', required=False)
@@ -26,21 +32,8 @@ class CreateUserProfileForm(forms.Form):
         help_text='Who are you? What do you like to write about?'
     )
 
-    # def clean(self):
-    #     cleaned_data = super(CreateUserProfileForm, self).clean()
-    #     avatar = cleaned_data.get('avatar')
-    #     location = cleaned_data.get('location')
-    #     social_media_link = cleaned_data.get('social-link')
-    #     bio = cleaned_data.get('bio')
-
     class Meta:
         model = CustomUser
         fields = ['avatar', 'location', 'social_media_link', 'bio',]
 
 #  ----------------------
-
-class CustomUserChangeForm(UserChangeForm):
-
-    class Meta:
-        model = CustomUser
-        fields = ['username', 'email']
