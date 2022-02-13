@@ -1,30 +1,29 @@
 from django.views import generic
 from django.urls import reverse_lazy
+from django.shortcuts import render
 from .models import NewsStory
 from .forms import StoryForm
-
-# ABOVE ^^ Step. 1. Add a view to the form (Forms)
 
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
 
     def get_queryset(self):
         '''Return all news stories.'''
-        return NewsStory.objects.all()
+        return NewsStory.objects.all().order_by('-pub_date')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['latest_stories'] = NewsStory.objects.all()[:4]
-        context['all_stories'] = NewsStory.objects.all()
+        context['latest_stories'] = NewsStory.objects.all().order_by('-pub_date')[:4]
+        context['all_stories'] = NewsStory.objects.all().order_by('-pub_date')
         return context
 
-# Step 13. Add a view for a single story
+# Add a view for a single story
 class StoryView(generic.DetailView):
     model = NewsStory
     template_name = 'news/story.html'
     context_object_name = 'story'
 
-# Step 1. Add a view to use the form (Forms)
+# Add a view to use the form (Forms)
 class AddStoryView(generic.CreateView):
     form_class = StoryForm
     context_object_name = 'storyForm'
