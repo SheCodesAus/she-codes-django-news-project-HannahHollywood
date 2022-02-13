@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
-
-{% load static %} 
+{% load static %}
 
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'users/styles.css' %}">
 {% endblock %} 
 
 {% block content %}
@@ -14,7 +14,7 @@
 
 <div class="user-profile-info">
   <ul class="user-input">
-    <li><img src="{{ post.image.url }}" alt="avatar"></li>
+    <li><img src="{{ customuser.photo.url }}" alt="avatar"></li>
     <li>Location: {{ customuser.location }}</li>
     <li>Follow { {{ customuser.username }} } Here: {{ customuser.social_media_link }}</li>
   </ul>
@@ -35,10 +35,10 @@
   <h3>Your Story History:</h3>
   {% if customuser.newsstory_set.all %} 
     {% for story in customuser.newsstory_set.all %} 
-      {% include "news/storyCard.html" with story=story position=forloop.counter %} 
+      {% include "news/storyCard.html" with story=story position=forloop.counter %}
       {% endfor %}
   {% else %}
-  <p>No stories are available.</p>
+    <p>No stories are available.</p>
   {% endif %}
 </div>
 

@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
+from django.http import HttpResponse
 from django.contrib.auth import login
 from django.views.generic.edit import CreateView, FormView, UpdateView
 from django.views import generic
 from .models import CustomUser
 from .forms import CustomUserCreationForm, EditUserProfileForm
-from news.models import NewsStory
 
 # -------------------------------------------------------------------
 class CreateAccountView(CreateView):
@@ -38,4 +38,9 @@ class EditUserProfileView(UpdateView):
 class UserProfileView(generic.DetailView):
     model = CustomUser
     template_name = 'users/userProfileHome.html'
-    # context_object_name = 'profile'
+
+    # def home(request):
+    #     photos = CustomUser.objects.avatar()
+    #     for photo in photos:
+    #         '<img src="' + photo.url + '">'
+    #     return HttpResponse (photo)

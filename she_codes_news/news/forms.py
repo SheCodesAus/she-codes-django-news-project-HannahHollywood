@@ -4,7 +4,7 @@ from .models import NewsStory
 
 # Create a forms.py and complete imports & add class
 
-class StoryForm(ModelForm):
+class StoryForm(forms.ModelForm):
     class Meta:
         model = NewsStory
         fields = ['title', 'pub_date', 'content']
