@@ -1,28 +1,38 @@
 {% extends 'base.html' %}
 
+{% load static %} 
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %} 
+
 {% block content %}
 
-<h2>Welcome to {{ customuser.username }}s Page!</h2> 
-
-<div class="user-add-story">
-    You can write new stories to be shared with other users here:
-    <button><a href="{% url 'news:newStory' %}">!! Write New Story !!</a></button>
+<div class="profile-header">
+<h2 id="prof-header-text">Welcome to { {{ customuser.username }}&#700;s } Page!</h2> 
 </div>
 
 <div class="user-profile-info">
-  <ul>
-    <li>{{ customuser.avatar }}</li>
+  <ul class="user-input">
+    <li><img src="{{ post.image.url }}" alt="avatar"></li>
     <li>Location: {{ customuser.location }}</li>
-    <li>Follow {{ customuser.username }} Here: {{ customuser.social_media_link }}</li>
+    <li>Follow { {{ customuser.username }} } Here: {{ customuser.social_media_link }}</li>
   </ul>
 
-  <h4>About {{ customuser.username }}:</h4>
-  <p>
+  <h4 id="about-title">About {{ customuser.username }}:</h4>
+  <p id="bio">
     {{ customuser.bio }}
   </p>
 </div>
 
-<div id="stories">
+<div class="user-add-story">
+  You can write new stories to be shared with other users here:
+  </br>
+  <button><a href="{% url 'news:newStory' %}">!! Write New Story !!</a></button>
+</div>
+
+<div class="profile-stories">
+  <h3>Your Story History:</h3>
   {% if customuser.newsstory_set.all %} 
     {% for story in customuser.newsstory_set.all %} 
       {% include "news/storyCard.html" with story=story position=forloop.counter %} 
@@ -32,8 +42,8 @@
   {% endif %}
 </div>
 
-{% comment %} NOTE: need to make it so that when the user is logged in they can edit the page {% endcomment %}
-{% comment %} BUT: if they go to someone else's profile, the edit button disappears {% endcomment %}
+</br>
+
 {% if request.user == customuser %}
   <button><a href="{% url 'users:editProfile' %}">Edit Profile</a></button>
 {% else %}

@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # Step 5. Added the news app to list of installed apps
+    # Added the news app to list of installed apps
     'news.apps.NewsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Step 1. Add Users app & auth the user model (User Apps)
+    # Add Users app & auth the user model (User Apps)
     'users.apps.UsersConfig',
 ]
 
@@ -61,7 +61,7 @@ ROOT_URLCONF = 'she_codes_news.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # Step 10. Update directories for templates and static files
+        # Update directories for templates and static files
         'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -125,7 +125,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-# Step 10. Update directories and static files
+# Update directories and static files
 
 STATIC_URL = '/static/'
 
@@ -135,6 +135,6 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Step 7. Add a Login/Logout Redirect
+# Add a Login/Logout Redirect
 LOGIN_REDIRECT_URL = 'news:index'
 LOGOUT_REDIRECT_URL = 'news:index'

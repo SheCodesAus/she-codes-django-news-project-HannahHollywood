@@ -13,10 +13,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
-    <!-- Step 11. Add Stylesheets -->
-    {% block stylesheets %}
-    
-    {% endblock %}
+    <!-- Add Stylesheets -->
+    {% block stylesheets %} {% endblock %}
   </head>
 
   <body>
@@ -26,14 +24,12 @@
           <h1>She {Codes} News</h1>
         </a>
       </div>
-      <!-- include nav here -->
-      <!-- Step 15. Include nav template in base.html -->
+      <!-- Include nav template in base.html -->
       {% include './nav.html' %}
     </header>
 
-    <!-- Step 10. content blocks here -->
-    {% block content %}
-    
+    <!-- Content blocks here -->
+    {% block content %}   
     {% endblock %}
   </body>
 </html>

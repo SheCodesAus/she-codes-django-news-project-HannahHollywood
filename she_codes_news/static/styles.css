@@ -53,3 +53,39 @@ a,
 p {
   font-family: monospace;
 }
+
+/* Login Page */
+
+#login-text {
+  color: blueviolet;
+}
+
+/* --------------------------------------------------------- */
+
+/* Profile Home Page */
+.profile-header {
+  background-color: #633A83;
+  border-radius: 15%;
+}
+#prof-header-text {
+  text-align: center;
+  text-decoration: none;
+  color: #ffff;
+}
+
+.user-profile-info {
+  border: #000;
+  text-align: center;
+}
+
+.user-input {
+  list-style-type: none;
+}
+
+.user-add-story {
+  text-align: center;
+}
+
+.profile-stories h3 {
+  color: #633A83;
+}
