@@ -42,6 +42,14 @@ Everytime you make changes to the 'models' you need to run:
 1."python3 manage.py makemigrations"
 2. Run "python manage.py migrate" to apply them.
 
+---
+
+To Run the Page WITH the Yellow Error screen:
+    1. export DJANGO_DEBUG=True
+
+WITHOUT:
+    export DJANGO_DEBUG=False
+
 
 --------------
 Ideas to Improve Website:

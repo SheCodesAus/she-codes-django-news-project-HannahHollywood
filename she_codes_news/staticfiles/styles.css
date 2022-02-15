@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap");
+
+body {
+  background-color: rgb(240, 239, 239);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+}
+
+img {
+  filter: grayscale(100%);
+}
+
+h1 {
+  font-family: "Montserrat Subrayada", sans-serif;
+  text-decoration: none;
+  font-size: 4rem;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Montserrat Subrayada", sans-serif;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+#header-text {
+  flex-basis: 80%;
+  display: flex;
+}
+
+nav {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+a {
+  margin: 2px;
+  text-decoration: none;
+  color: #000;
+}
+
+a,
+p {
+  font-family: monospace;
+}
+
+/* Login Page */
+
+#login-text {
+  color: blueviolet;
+}
+
+/* --------------------------------------------------------- */
+
+/* Profile Home Page */
+.profile-header {
+  background-color: #633A83;
+  border-radius: 15%;
+}
+#prof-header-text {
+  text-align: center;
+  text-decoration: none;
+  color: #ffff;
+}
+
+.user-profile-info {
+  border: #000;
+  text-align: center;
+}
+
+.user-input {
+  list-style-type: none;
+}
+
+.user-add-story {
+  text-align: center;
+}
+
+.profile-stories h3 {
+  color: #633A83;
+}
