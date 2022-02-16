@@ -21,6 +21,12 @@ To exit Django:
 Then Re-Enter Django:
 ". venv/bin/activate"
 
+-----
+
+HEROKU: git push heroku main
+
+-----
+
 > > > https://docs.djangoproject.com/en/4.0/intro/tutorial01/
 
 ---
