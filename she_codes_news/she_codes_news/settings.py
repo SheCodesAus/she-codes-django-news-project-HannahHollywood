@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Add Users app & auth the user model (User Apps)
     'users.apps.UsersConfig',
+    'django.forms',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -89,6 +90,7 @@ TEMPLATES = [
     },
 ]
 
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 WSGI_APPLICATION = 'she_codes_news.wsgi.application'
 
 

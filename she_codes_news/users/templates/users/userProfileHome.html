@@ -25,6 +25,11 @@
   </p>
 </div>
 
+{% if request.user == customuser %}
+  <button><a href="{% url 'users:editProfile' %}">Edit Profile</a></button>
+{% else %}
+{% endif %}
+
 <div class="user-add-story">
   You can write new stories to be shared with other users here:
   </br>
@@ -44,9 +49,9 @@
 
 </br>
 
-{% if request.user == customuser %}
+{% comment %} {% if request.user == customuser %}
   <button><a href="{% url 'users:editProfile' %}">Edit Profile</a></button>
 {% else %}
-{% endif %}
+{% endif %} {% endcomment %}
 
 {% endblock %}

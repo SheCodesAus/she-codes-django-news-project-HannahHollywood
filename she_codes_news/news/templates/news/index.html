@@ -8,13 +8,13 @@
 
 {% block content %}
 
-<!-- Step 3. Add a link to the form from the home page (Forms) -->
+<!-- Add a link to the form from the home page (Forms) -->
 <a href="{% url 'news:newStory' %}">Write New Story</a>
 
 <h2>Latest News</h2>
 
 <div id="latest-stories">
-  <!-- Step 12. Use story card template -->
+  <!-- Use story card template -->
   {% if latest_stories %} 
     {% for story in latest_stories %} 
       {% include "./storyCard.html" with story=story position=forloop.counter %} 
