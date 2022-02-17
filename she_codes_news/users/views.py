@@ -3,8 +3,11 @@ from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.views.generic.edit import CreateView, FormView, UpdateView
+from django.views.generic import ListView
 from django.views import generic
+from django.shortcuts import get_object_or_404
 from .models import CustomUser
+from news.models import NewsStory
 from .forms import CustomUserCreationForm, EditUserProfileForm
 
 # -------------------------------------------------------------------
@@ -18,6 +21,8 @@ class CreateAccountView(CreateView):
         user = self.object
         login(self.request, user)
         return f
+
+# -------------------------------------------------------------------
 
 class EditUserProfileView(UpdateView):
     form_class = EditUserProfileForm
@@ -39,8 +44,19 @@ class UserProfileView(generic.DetailView):
     model = CustomUser
     template_name = 'users/userProfileHome.html'
 
-    # def home(request):
-    #     photos = CustomUser.objects.avatar()
-    #     for photo in photos:
-    #         '<img src="' + photo.url + '">'
-    #     return HttpResponse (photo)
+# --------------------------------------------------------------------
+
+# Add a view for 'View by Author' page
+class AuthorsView(ListView):
+    model = CustomUser
+    template_name = 'users/viewAuthors.html'
+    # context_object_name = 'authors'
+
+    def get_queryset(self):
+        self.authors = get_object_or_404(CustomUser, name=self.kwargs['authors'])
+        return NewsStory.objects.filter(authors=self.authors)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['authors'] = self.authors
+        return context

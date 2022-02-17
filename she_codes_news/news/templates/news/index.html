@@ -1,4 +1,4 @@
-<!-- Step 11. Load stylesheets into the news app index -->
+<!-- Load stylesheets into the news app index -->
 {% extends "base.html" %} 
 {% load static %} 
 
@@ -18,6 +18,7 @@
   {% if latest_stories %} 
     {% for story in latest_stories %} 
       {% include "./storyCard.html" with story=story position=forloop.counter %} 
+      {% comment %} <a href="{% url deleteStory %}">(Delete)</a> {% endcomment %}
       {% endfor %}
   {% else %}
   <p>No stories are available.</p>

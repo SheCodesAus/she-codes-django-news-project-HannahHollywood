@@ -1,7 +1,8 @@
 from django.views import generic
 from django.urls import reverse_lazy
 from django.shortcuts import render
-from .models import NewsStory
+from django.views.generic.edit import DeleteView, UpdateView
+from .models import NewsStory, get_user_model
 from .forms import StoryForm
 
 class IndexView(generic.ListView):
@@ -33,3 +34,14 @@ class AddStoryView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+# Add ability to edit a story
+class EditStoryView(UpdateView):
+    model = NewsStory
+    template_name = 'news/editStory.html'
+    fields = ['title', 'pub_date', 'content']
+
+# Add ability to delete a story
+class DeleteStoryView(DeleteView):
+    model = NewsStory
+    template_name = 'news/deleteStory.html'

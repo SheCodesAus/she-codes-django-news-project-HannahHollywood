@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+
+<h1>View Authors</h2>
+
+{% comment %} <div>
+
+    
+{% for author in authors %}
+    {% include "./userProfileHome.html" with authors=author position=forloop.counter %}
+    {% endfor %}
+    {{ author.name }}
+
+</div>   {% endcomment %}
+
+{% endblock %}
