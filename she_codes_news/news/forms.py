@@ -1,15 +1,20 @@
 from audioop import reverse
+from turtle import title
 from django import forms
 from django.forms import ModelForm
 from .models import NewsStory
 from django.utils import timezone
 
-# Create a forms.py and complete imports & add class
+# categories = [('fun', 'fun'), ('music', 'music'), ('movies', 'movies'), ('education', 'education'), ('science', 'science'), ('technology', 'technology'), ('animals', 'animals'), ('food', 'food')]
 
+# Create a forms.py and complete imports & add class
 class StoryForm(forms.ModelForm):
     class Meta:
         model = NewsStory
-        fields = ['title', 'pub_date', 'content']
+        fields = ['title', 'pub_date', 'category', 'content']
+        widgets = {
+            # 'category': forms.Select(categories=categories, attrs={'class': 'form-control'}),
+        }
         # Add a date picker widget (Forms)
         # widgets = {
         #     'pub_date': forms.DateInput(format=('%d/%m/%Y'), attrs={'class': 'form-control', 'placeholder': 'Select a date', 'type': 'date'}),
