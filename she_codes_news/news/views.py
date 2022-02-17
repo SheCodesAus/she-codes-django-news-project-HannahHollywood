@@ -40,8 +40,10 @@ class EditStoryView(UpdateView):
     model = NewsStory
     template_name = 'news/editStory.html'
     fields = ['title', 'pub_date', 'content']
+    success_url = reverse_lazy('news:index')
 
 # Add ability to delete a story
 class DeleteStoryView(DeleteView):
     model = NewsStory
     template_name = 'news/deleteStory.html'
+    success_url = reverse_lazy('news:index')

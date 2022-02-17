@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
+from django.urls import reverse
 
 
 class NewsStory(models.Model):
@@ -13,3 +14,6 @@ class NewsStory(models.Model):
     content = models.TextField()
     class Meta: 
         ordering = ['-pub_date']
+
+    # def get_absolute_url(self):
+    #     return reverse('story')

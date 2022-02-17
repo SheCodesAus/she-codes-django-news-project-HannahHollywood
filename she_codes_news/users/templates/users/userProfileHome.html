@@ -25,16 +25,21 @@
   </p>
 </div>
 
+{% comment %} MOVE THIS WHEN DONE {% endcomment %}
 {% if request.user == customuser %}
   <button><a href="{% url 'users:editProfile' %}">Edit Profile</a></button>
 {% else %}
 {% endif %}
+{% comment %} MOVE THIS WHEN DONE {% endcomment %}
 
+{% if request.user == customuser %}
 <div class="user-add-story">
   You can write new stories to be shared with other users here:
   </br>
   <button><a href="{% url 'news:newStory' %}">!! Write New Story !!</a></button>
 </div>
+{% else %}
+{% endif %}
 
 <div class="profile-stories">
   <h3>Your Story History:</h3>

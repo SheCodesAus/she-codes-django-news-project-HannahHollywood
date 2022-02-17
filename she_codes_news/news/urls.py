@@ -11,7 +11,7 @@ urlpatterns = [
     # Add the form for newStory in the urls (Forms)
     path('add-story/', views.AddStoryView.as_view(), name='newStory'),
     # Add a way to edit a story
-    path('<int:pk>/edit', EditStoryView.as_view(), name='editStory'),
+    path('story/<int:pk>/edit', EditStoryView.as_view(), name='editStory'),
     # Add a a way to delete a story
-    path('<int:pk>/delete', DeleteStoryView.as_view(), name='deleteStory'),
+    path('story/<int:pk>/delete', DeleteStoryView.as_view(), name='deleteStory'),
 ]
