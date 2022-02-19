@@ -5,14 +5,15 @@
 
 <h1>View Authors</h2>
 
-{% comment %} <div>
+    {% comment %} use the story card html {% endcomment %}
 
-    
+<div>
+
 {% for author in authors %}
     {% include "./userProfileHome.html" with authors=author position=forloop.counter %}
     {% endfor %}
     {{ author.name }}
 
-</div>   {% endcomment %}
+</div>
 
 {% endblock %}

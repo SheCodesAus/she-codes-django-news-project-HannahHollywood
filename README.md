@@ -72,3 +72,12 @@ First step: User will fill out the "Sign Up" form and then:
         - Bio
 
 3. Link to User Profile from Home (DONE)
+
+
+
+What to Submit:
+
+- Link to Heroku site
+- Username and password to admin
+- Screenshots and upload to GitHub
+- git push heroku main !!!!!

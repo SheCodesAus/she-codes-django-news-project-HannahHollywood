@@ -53,10 +53,9 @@ class AuthorsView(ListView):
     # context_object_name = 'authors'
 
     def get_queryset(self):
-        self.authors = get_object_or_404(CustomUser, name=self.kwargs['authors'])
-        return NewsStory.objects.filter(authors=self.authors)
+        return CustomUser.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['authors'] = self.authors
+        context['authors'] = CustomUser.objects.all()
         return context
