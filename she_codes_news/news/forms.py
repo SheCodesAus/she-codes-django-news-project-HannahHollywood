@@ -5,14 +5,13 @@ from django.forms import ModelForm
 from .models import NewsStory
 from django.utils import timezone
 
-# categories = [('fun', 'fun'), ('music', 'music'), ('movies', 'movies'), ('education', 'education'), ('science', 'science'), ('technology', 'technology'), ('animals', 'animals'), ('food', 'food')]
-
 # Create a forms.py and complete imports & add class
 class StoryForm(forms.ModelForm):
     class Meta:
         model = NewsStory
         fields = "__all__"
         widgets = {
+            # BELOW did not work... but keeping to laugh at
             # 'category': forms.Select(categories=categories, attrs={'class': 'form-control'}),
         }
         # Add a date picker widget (Forms)

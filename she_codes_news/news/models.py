@@ -18,11 +18,19 @@ class NewsStory(models.Model):
         ordering = ['-pub_date']
     
     categories = (
-        ('NEWS', 'News'),
-        ('PROGRAM', 'Program'),
-        ('ANNOUNCEMENTS', 'Announcements'),
+        ('FUN', 'Fun'),
+        ('MUSIC', 'Music'),
+        ('MOVIES', 'Movies'),
+        ('EDUCATION', 'Education'),
+        ('SCIENCE', 'Science'),
+        ('TECHNOLOGY', 'Technology'),
+        ('ANIMALS', 'Animals'),
+        ('FOOD', 'Food'),
     )
     category = models.CharField(max_length=200, choices = categories, default='news')
 
     # def get_absolute_url(self):
     #     return reverse('story')
+
+
+# categories = [('fun', 'fun'), ('music', 'music'), ('movies', 'movies'), ('education', 'education'), ('science', 'science'), ('technology', 'technology'), ('animals', 'animals'), ('food', 'food')]

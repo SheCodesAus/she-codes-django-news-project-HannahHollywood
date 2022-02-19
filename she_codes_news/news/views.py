@@ -24,7 +24,7 @@ class StoryView(generic.DetailView):
     template_name = 'news/story.html'
     context_object_name = 'story'
 
-# Add a view to use the form (Forms)
+# Add ability to create a new story
 class AddStoryView(generic.CreateView):
     form_class = StoryForm
     context_object_name = 'storyForm'
@@ -39,7 +39,7 @@ class AddStoryView(generic.CreateView):
 class EditStoryView(UpdateView):
     model = NewsStory
     template_name = 'news/editStory.html'
-    fields = ['title', 'pub_date', 'content']
+    fields = ['title', 'pub_date', 'image', 'category', 'content']
     success_url = reverse_lazy('news:index')
 
 # Add ability to delete a story
