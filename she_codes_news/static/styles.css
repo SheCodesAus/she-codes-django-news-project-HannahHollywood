@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+/*  */
 
 body {
-  background-color: rgb(240, 239, 239);
+  background-color: #FFFFFF;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 header {
@@ -9,10 +13,6 @@ header {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #000;
-}
-
-img {
-  filter: grayscale(100%);
 }
 
 h1 {
@@ -49,11 +49,6 @@ a {
   color: #000;
 }
 
-a,
-p {
-  font-family: monospace;
-}
-
 /* Login Page */
 
 #login-text {
@@ -63,29 +58,154 @@ p {
 /* --------------------------------------------------------- */
 
 /* Profile Home Page */
-.profile-header {
-  background-color: #633A83;
-  border-radius: 15%;
-}
-#prof-header-text {
-  text-align: center;
-  text-decoration: none;
-  color: #ffff;
+.user-profile-container {
+  font-family: 'Ubuntu', sans-serif;
+  border: 5px solid #633A83;
 }
 
 .user-profile-info {
+  border: 5px solid #633A83;
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
+.profile-header {
+  text-align: -webkit-center;
+}
+#prof-header-text {
+  text-transform: capitalize;
+  text-decoration: none;
+  width: 50%;
+  text-align: center;
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+}
+.prof-header-text:link {
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.user-profile-info {
   border: #000;
   text-align: center;
+  line-height: 2;
+  width: auto;
 }
-
 .user-input {
   list-style-type: none;
+}
+.user-input span {
+  font-weight: 1000;
+  color: #633A83;
+}
+.user-input img {
+  border-radius: 50%;
+  width: 20rem;
+  border: 5px solid #8246AF;
+}
+.user-input:hover img {
+  border: 5px dashed #FFA300;
+}
+
+#socials {
+  font-family: 'Ubuntu';
+  color: #633A83;
+  width: 20px;
+}
+
+.bio-section {
+  line-height: 2;
+  width: 45%;
+  margin-left: 20px;
+}
+.bio-section span {
+  color: #633A83;
+  font-weight: 1000;
+}
+#about-title {
+  font-size: 40px;
+  margin: auto;
+}
+#bio {
+  font-family: 'Ubuntu';
+  font-size: large;
 }
 
 .user-add-story {
   text-align: center;
+  margin-top: 0px;
+  line-height: 3;
+  font-size: large;
 }
 
-.profile-stories h3 {
+.profile-stories #title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#title span {
   color: #633A83;
+}
+
+/* DOTTED LINE DIV */
+.dotted-line {
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+.dotted-line:after {
+  content: "..........................................................................................................";
+  letter-spacing: 6px;
+  font-size: 30px;
+  color: #FFA300;
+  display: inline-block;
+  vertical-align: 3px;
+  padding-left: 10px;
+}
+
+/* Buttons for Profile Page */
+.profile-page-buttons a {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+.profile-page-buttons a {
+  font-family: 'Ubuntu';
+  font-size: x-large;
+  font-weight: 1000;
+}
+.profile-page-buttons #edit-button{
+  min-height: 40px;
+  min-width: 0;
+  font-size: small;
+}
+.profile-page-buttons:hover a {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+.profile-page-buttons:active a {
+  transform: translateY(0);
 }

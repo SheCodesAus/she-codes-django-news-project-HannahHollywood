@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     # Add Users app & auth the user model (User Apps)
     'users.apps.UsersConfig',
     'django.forms',
+    # Added fontawesome
+    'fontawesomefree',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'

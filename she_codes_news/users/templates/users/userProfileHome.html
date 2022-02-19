@@ -2,61 +2,70 @@
 {% load static %}
 
 {% block stylesheets %}
+<link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'users/styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'she_codes_news/styles.css' %}">
 {% endblock %} 
 
 {% block content %}
 
-<div class="profile-header">
-<h2 id="prof-header-text">Welcome to { {{ customuser.username }}&#700;s } Page!</h2> 
-</div>
+<div class="user-profile-container">
+  <div class="profile-header">
+  <h5 id="prof-header-text">{ {{ customuser.username }}&#700;s } Page!</h5> 
+  </div>
 
-<div class="user-profile-info">
-  <ul class="user-input">
-    <li><img src="{{ customuser.avatar }}" alt="avatar"></li>
-    <li>Location: {{ customuser.location }}</li>
-    <li>Follow { {{ customuser.username }} } Here: {{ customuser.social_media_link }}</li>
-  </ul>
+  <div class="user-profile-info"> 
+    <ul class="user-input">
+      <li><img src="{{ customuser.avatar }}" alt="avatar"></li>
+      <li><span>{ {{ customuser.first_name }} {{ customuser.last_name }} }<span></li>
+      <li>Location <span>{ {{ customuser.location }} }</span></li>
+      <li>Follow <span><a 
+        id="socials"
+        href="{{ customuser.social_media_link }}" 
+        target="_blank">{ {{ customuser.username }} }</span></a>
+      </br> 
+        <a 
+        id="socials"
+        href="{{ customuser.social_media_link }}" 
+        target="_blank">
+        <i class="fa-solid fa-circle-plus fa-beat" style="--fa-animation-duration: 2s;"></i>
+        </a>
+      </li>
+    </ul>
 
-  <h4 id="about-title">About {{ customuser.username }}:</h4>
-  <p id="bio">
-    {{ customuser.bio }}
-  </p>
-</div>
+    <div class="bio-section">
+      <h4 id="about-title">About <span>{ {{ customuser.username }} }</span></h4>
+      <p id="bio">
+        {{ customuser.bio }}
+      </p>
+      {% if request.user == customuser %}
+      <button class="profile-page-buttons"><a id="edit-button" href="{% url 'users:editProfile' %}">Edit Profile</a></button>
+      {% else %}
+      {% endif %}
+    </div>
+  </div>
 
-{% comment %} MOVE THIS WHEN DONE {% endcomment %}
-{% if request.user == customuser %}
-  <button><a href="{% url 'users:editProfile' %}">Edit Profile</a></button>
-{% else %}
-{% endif %}
-{% comment %} MOVE THIS WHEN DONE {% endcomment %}
-
-{% if request.user == customuser %}
-<div class="user-add-story">
-  You can write new stories to be shared with other users here:
-  </br>
-  <button><a href="{% url 'news:newStory' %}">!! Write New Story !!</a></button>
-</div>
-{% else %}
-{% endif %}
-
-<div class="profile-stories">
-  <h3>Your Story History:</h3>
-  {% if customuser.newsstory_set.all %} 
-    {% for story in customuser.newsstory_set.all %} 
-      {% include "news/storyCard.html" with story=story position=forloop.counter %}
-      {% endfor %}
+  {% if request.user == customuser %}
+  <div class="user-add-story">
+    You can write new stories to be shared with other users here:
+    </br>
+    <button class="profile-page-buttons"><a href="{% url 'news:newStory' %}">Write New Story</a></button>
+  </div>
   {% else %}
-    <p>No stories are available.</p>
   {% endif %}
+
+  <h2 class="dotted-line"></h2>
+
+  <div class="profile-stories">
+    <h3 id="title"><span>{ {{ customuser.username }}&#700;s }</span> Story History:</h3>
+    {% if customuser.newsstory_set.all %} 
+      {% for story in customuser.newsstory_set.all %} 
+        {% include "news/storyCard.html" with story=story position=forloop.counter %}
+        {% endfor %}
+    {% else %}
+      <p>No stories are available.</p>
+    {% endif %}
+  </div>
 </div>
-
-</br>
-
-{% comment %} {% if request.user == customuser %}
-  <button><a href="{% url 'users:editProfile' %}">Edit Profile</a></button>
-{% else %}
-{% endif %} {% endcomment %}
 
 {% endblock %}

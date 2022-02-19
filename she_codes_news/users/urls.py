@@ -1,5 +1,7 @@
 from django.urls import path
 from .views import CreateAccountView, EditUserProfileView, UserProfileView, AuthorsView
+from . import views
+
 
 app_name = 'users'
 
@@ -10,5 +12,5 @@ urlpatterns = [
     # Directing the edit-profile page to the users completed profile
     path('profile/<int:pk>/', UserProfileView.as_view(), name='profile'),
     # Add URl to 'view by author page'
-    path('view-authors', AuthorsView.as_view(), name='authors')
+    path('view-authors', AuthorsView.as_view(), name='authors'),
 ]

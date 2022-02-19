@@ -8,12 +8,21 @@
     <title>She Codes News</title>
     <meta name="description" content="" />
     <meta name="author" content="Hannah-Beth Hannah-Becker" />
+    <link 
+    href="{% static 'fontawesomefree/css/all.min.css' %}" 
+    rel="stylesheet" 
+    type="text/css"
+    />
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
     <link
       href="https://fonts.googleapis.com/css?family=Manjari&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
-    <!-- Add Stylesheets -->
+    <link 
+      rel="stylesheet" 
+      type="text/css" 
+      href="{% static 'styles.css' %}" 
+    />
     {% block stylesheets %} {% endblock %}
   </head>
 
