@@ -20,7 +20,7 @@
 {% comment %} {% if request.user == customuser %} {% endcomment %}
 {% if request.user.is_authenticated %}
     <a href="{% url 'news:editStory' story.id %}">Edit Story</a> <br/>
-    <a href="{% url 'news:deleteStory' story.id %}">Delete Story</a> <br/>
+    <a href="{% url 'news:deleteStory' story.id %}">Delete</a> <br/>
 {% else %}
 {% endif %}
 

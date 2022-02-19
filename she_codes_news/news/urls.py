@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from .views import IndexView, StoryView, AddStoryView, EditStoryView, DeleteStoryView
 
 app_name = 'news'
 
@@ -11,7 +10,7 @@ urlpatterns = [
     # Add the form for newStory in the urls (Forms)
     path('add-story/', views.AddStoryView.as_view(), name='newStory'),
     # Add a way to edit a story
-    path('story/<int:pk>/edit', EditStoryView.as_view(), name='editStory'),
+    path('story/<int:pk>/edit', views.EditStoryView.as_view(), name='editStory'),
     # Add a a way to delete a story
-    path('story/<int:pk>/delete', DeleteStoryView.as_view(), name='deleteStory'),
+    path('story/<int:pk>/delete', views.DeleteStoryView.as_view(), name='deleteStory'),
 ]

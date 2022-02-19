@@ -4,13 +4,13 @@
 
 <h1> Delete Post...</h1>
 <br/><br/>
-<h3>Delete: {{ story.title }}</h3>
+<h3>Delete: {{ newsstory.title }}</h3>
 
 <br/>
 <div class="form-group">
     <form method="POST">
         {% csrf_token %}
-        <strong>Are you sure?!</strong><br/>
+        <strong>Once it's gone, it's gone...!</strong><br/></br/>
         <button class="btn btn-secondary">Delete Post!</button>
     </div>
 
