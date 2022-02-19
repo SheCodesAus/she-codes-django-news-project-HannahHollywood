@@ -7,7 +7,7 @@ from django.utils import timezone
 class StoryForm(forms.ModelForm):
     class Meta:
         model = NewsStory
-        fields = "__all__"
+        fields = ['title', 'pub_date', 'image', 'category', 'content']
         widgets = {
             # BELOW did not work... but keeping to laugh at
             # 'category': forms.Select(categories=categories, attrs={'class': 'form-control'}),

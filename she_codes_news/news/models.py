@@ -11,7 +11,7 @@ class NewsStory(models.Model):
     )
     pub_date = models.DateTimeField()
 
-    image = models.URLField(blank=True)
+    image = models.URLField(help_text='(Copy Image Address)', blank=True)
     content = models.TextField()
 
     class Meta: 

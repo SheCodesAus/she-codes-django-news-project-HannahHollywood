@@ -1,11 +1,10 @@
 <div class="story-card" id="story-card-{{ position }}">
-    {% comment %} {% if request.user puts in url %} {% endcomment %}
-    {% comment %} <img src="{{ newsstory.image }}" alt="image"> {% endcomment %}
+    {% if story.image %}
+    <img src="{{ story.image }}" alt="image">
 
-    {% comment %} if there is an image url then "display url image" {% endcomment %}
-    
-    {% if position < 5 %}
+    {% elif position < 5 %}
     <img src="/static/news/images/placeholder-{{ position }}.jpg" />
+
     {% else %}
     <img src="https://picsum.photos/600" />
     {% endif %}
