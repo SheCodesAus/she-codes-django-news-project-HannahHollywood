@@ -1,0 +1,21 @@
+<div class="author-card">
+    {% if author.avatar %}
+        <img src="{{ author.avatar }}" alt="avatar">
+    
+        {% else %}
+        <img src="https://www.pngkey.com/png/full/107-1072091_computer-icons-user-profile-facebook-instagram-instagram-profile.png" />
+        {% endif %}
+
+    <div class="author-card-text">
+        <h4><a href="{% url 'users:profile' author.id %}">{{ author.username }}</h4>
+        <h4>{{ author.location }}</h4>
+    </div>
+</div>
+
+
+{% comment %} OLD IDEA (which semi-worked) {% endcomment %}
+
+{% comment %} {% for author in authors %}
+    {% include "./userProfileHome.html" with authors=author position=forloop.counter %}
+    {% endfor %}
+    {{ author.name }} {% endcomment %}

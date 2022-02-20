@@ -50,7 +50,7 @@ class UserProfileView(generic.DetailView):
 class AuthorsView(ListView):
     model = CustomUser
     template_name = 'users/viewAuthors.html'
-    # context_object_name = 'authors'
+    # context_object_name = 'author'
 
     def get_queryset(self):
         return CustomUser.objects.all()

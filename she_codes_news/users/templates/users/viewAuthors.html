@@ -3,17 +3,21 @@
 
 {% block content %}
 
-<h1>View Authors</h2>
+<div class="auth-title-div">
+    <h1 id="view-auth-title">View <span>{ Authors }</span></h2>
+</div>
 
-    {% comment %} use the story card html {% endcomment %}
-
-<div>
-
-{% for author in authors %}
-    {% include "./userProfileHome.html" with authors=author position=forloop.counter %}
-    {% endfor %}
-    {{ author.name }}
-
+<div class="view-authors-container">
+        <div id="all-authors">
+            <!-- Use author card template -->
+            {% if authors %} 
+                {% for author in authors %} 
+                {% include "./authorCard.html" with authors=author %} 
+            {% endfor %} 
+                {% else %}
+            <p>No Authors are Available to View 😔</p>
+            {% endif %}
+        </div>
 </div>
 
 {% endblock %}

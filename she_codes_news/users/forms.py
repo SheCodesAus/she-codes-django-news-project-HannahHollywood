@@ -22,7 +22,7 @@ class CustomUserCreationForm(UserCreationForm):
 # -----------------------
 
 class EditUserProfileForm(forms.ModelForm):
-    avatar = forms.URLField(help_text='Copy Image Address URL', required=False)
+    avatar = forms.URLField(help_text='Copy Image Address URL', required=True)
     location = forms.CharField(max_length=30, required=False)
     social_media_link = forms.URLField(help_text='Enter URL', required=False)
     bio = forms.CharField(

@@ -56,8 +56,8 @@
 
   <h2 class="dotted-line"></h2>
 
+  <h3 id="user-stories-list-title"><span>{ {{ customuser.username }}&#700;s }</span> Story History:</h3>
   <div class="profile-stories">
-    <h3 id="title"><span>{ {{ customuser.username }}&#700;s }</span> Story History:</h3>
     {% if customuser.newsstory_set.all %} 
       {% for story in customuser.newsstory_set.all %} 
         {% include "news/storyCard.html" with story=story position=forloop.counter %}

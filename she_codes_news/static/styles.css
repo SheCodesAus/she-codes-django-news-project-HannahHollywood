@@ -16,14 +16,9 @@ header {
 }
 
 h1 {
-  font-family: "Montserrat Subrayada", sans-serif;
   text-decoration: none;
   font-size: 4rem;
   margin: 0;
-}
-
-h2 {
-  font-family: "Montserrat Subrayada", sans-serif;
 }
 
 h3 {
@@ -139,11 +134,11 @@ a {
   font-size: large;
 }
 
-.profile-stories #title {
+#user-stories-list-title {
   text-align: center;
   margin-bottom: 10px;
 }
-#title span {
+#user-stories-list-title span {
   color: #633A83;
 }
 
@@ -208,4 +203,56 @@ a {
 }
 .profile-page-buttons:active a {
   transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+
+/* Author Card View Page */
+.auth-title-div {
+  text-align: -webkit-center;
+}
+#view-auth-title {
+  text-align: center;
+  width: 50%;
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+}
+#view-auth-title span {
+  color: #633A83;
+}
+
+.author-card {
+  margin: 8px;
+  border: 1px dashed #FFA300;
+  padding: 7px;
+  width: fit-content;
+}
+
+.author-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
+
+#all-authors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#all-authors .author-card {
+  flex-basis: 32%;
+  flex-grow: 1;
+}
+
+#author-content {
+  text-align: justify;
+}
+
+#author-content img {
+  float: right;
+  margin: 0 0 10px 10px;
+  width: 50%;
 }
