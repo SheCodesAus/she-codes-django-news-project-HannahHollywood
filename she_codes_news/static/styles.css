@@ -1,54 +1,926 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+/*  */
 
 body {
-    background-color: rgb(240, 239, 239);
+  background-color: #FFFFFF;
+  font-family: 'Ubuntu', sans-serif;
+  border-top: 5px solid #633A83;
+  border-left: 5px solid #633A83;
+  border-right: 5px solid #633A83;
+  border-bottom: 5px solid #633A83;
 }
 
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Nav Bar Stylings */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #000;
-}
-
-img {
-    filter: grayscale(100%);
-}
-
-h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
-    text-decoration: none;
-    font-size: 4rem;
-    margin: 0;
-}
-
-h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
-}
-
-h3 {
-    font-size: 2rem;
-    margin: 0;
-}
-
-#header-text {
-    flex-basis: 80%;
-    display: flex;
-}
-
-nav {
-    flex-basis: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #633A83;
 }
 
 a {
-    margin: 2px;
-    text-decoration: none;
-    color: #000;
+  margin: 2px;
+  text-decoration: none;
 }
 
-a, p {
-    font-family: monospace;
+#she-codes-title {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 4rem;
+  margin: 0;
+  text-decoration: none;
+}
+#she-codes-title span {
+  color: #FFA300;
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+#header-text {
+  flex-basis: 80%;
+  display: flex;
+}
+
+nav {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+nav span {
+  color: #FFA300;
+  font-weight: 500;
+}
+
+.nav-bar a {
+  margin: 2px;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Login Page */
+.login-form {
+  text-align: center;
+  margin: inherit;
+}
+
+#login-text {
+  text-align: center;
+  text-decoration: none;
+  color: #633A83;
+  font-size: 70px;
+  margin: 28px;
+}
+
+.login-form span {
+  color: #FFA300;
+}
+
+#login-create-button {
+  font-family: 'Ubuntu';
+  font-size: x-large;
+  font-weight: 1000;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#login-create-button a {
+  color: #633A83;
+}
+#login-create-button:hover a {
+  color: #FFA300;
+}
+#login-create-button:hover {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFA300;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#login-create-button:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Sign Up Form */
+.sign-up-container {
+  margin: inherit;
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
+
+#sign-up {
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+  text-align: center;
+}
+
+#create-account-btn {
+  font-family: 'Ubuntu';
+  font-size: x-large;
+  font-weight: 1000;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#create-account-btn a {
+  color: #633A83;
+}
+#create-account-btn:hover a {
+  color: #FFA300;
+}
+#create-account-btn:hover {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFA300;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#create-account-btn:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Edit User Profile Form */
+#welcome-user {
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+  text-align: center;
+}
+
+#edit-page-txt {
+  text-align: center;
+}
+
+#edit-account-title {
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 38px;
+  margin: 28px;
+  text-align: center;
+}
+
+.edit-act-container {
+  margin: inherit;
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
+
+#confirm-edit-profile-btn {
+  font-family: 'Ubuntu';
+  font-size: x-large;
+  font-weight: 1000;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#confirm-edit-profile-btn a {
+  color: #633A83;
+}
+#confirm-edit-profile-btn:hover a {
+  color: #FFA300;
+}
+#confirm-edit-profile-btn:hover {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFA300;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#confirm-edit-profile-btn:active {
+  transform: translateY(0);
+}
+
+/* Skip Button for Edit Profile Page */
+#skip-edit-btn {
+  font-family: 'Ubuntu';
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 40px;
+  min-width: 0;
+  outline: none;
+  padding: 11px 13px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#skip-edit-btn a {
+  color: #633A83;
+}
+#skip-edit-btn:hover a {
+  color: #FFA300;
+}
+#skip-edit-btn:hover {
+  background-color: #633A83;
+  color: #FFA300;
+  font-weight: bolder;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#skip-edit-btn:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Index Page Styles */
+.intro-div {
+  text-align: -webkit-center;
+}
+.welcome-text {
+  text-align: center;
+  width: 50%;
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+}
+.welcome-text span {
+  color: #633A83;
+}
+#intro-text {
+  font-size: large;
+  width: 40rem;
+}
+#text-if-not-auth {
+  font-size: 18px;
+  line-height: 1.5;
+}
+#text-if-not-auth span {
+  color: #FFA300;
+  font-weight: 800;
+}
+
+#news-header {
+  text-align: initial;
+  width: 50%;
+  text-decoration: 2px underline #FFA300;
+  color: #633A83;
+  font-size: 30px;
+  margin: 28px;
+}
+
+/* DOTTED Line Purple */
+.dotted-line-2 {
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+.dotted-line-2:after {
+  content: "..........................................................................................................";
+  letter-spacing: 6px;
+  font-size: 30px;
+  color: #633A83;
+  display: inline-block;
+  vertical-align: 3px;
+  padding-left: 10px;
+}
+
+/* Write Story Button */
+#home-page-buttons {
+  font-family: 'Ubuntu';
+  font-size: x-large;
+  font-weight: 1000;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#home-page-buttons a {
+  color: #633A83;
+}
+#home-page-buttons:hover a {
+  color: #FFA300;
+}
+#home-page-buttons:hover {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#home-page-buttons:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Profile Home Page */
+.user-profile-container {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.user-profile-info {
+  border: 5px solid #633A83;
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
+.profile-header {
+  text-align: -webkit-center;
+}
+#prof-header-text {
+  text-transform: capitalize;
+  text-decoration: none;
+  width: 50%;
+  text-align: center;
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+}
+#prof-header-text:link {
+  text-transform: capitalize;
+  text-decoration: none;
+}
+#prof-header-text span {
+  color: #633A83;
+}
+.user-profile-info {
+  border: #000;
+  text-align: center;
+  line-height: 2;
+  width: auto;
+}
+.user-input {
+  list-style-type: none;
+}
+.user-input span {
+  font-weight: 1000;
+  color: #FFA300;
+}
+.user-input img {
+  border-radius: 50%;
+  width: 20rem;
+  border: 5px solid #8246AF;
+}
+.user-input:hover img {
+  border: 5px dashed #FFA300;
+}
+
+#socials {
+  font-family: 'Ubuntu';
+  color: #FFA300;
+  width: 20px;
+}
+#socials-icon {
+  color: #633A83;
+  width: 80px;
+}
+
+.bio-section {
+  line-height: 2;
+  width: 45%;
+  margin-left: 20px;
+}
+.bio-section span {
+  color: #633A83;
+  font-weight: 1000;
+}
+#about-title {
+  font-size: 40px;
+  margin: auto;
+}
+#bio {
+  font-family: 'Ubuntu';
+  font-size: large;
+}
+
+.user-add-story {
+  text-align: center;
+  margin-top: 0px;
+  line-height: 3;
+  font-size: large;
+}
+
+#user-stories-list-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#user-stories-list-title span {
+  color: #633A83;
+}
+
+/* DOTTED Line Orange */
+.dotted-line {
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+.dotted-line:after {
+  content: "..........................................................................................................";
+  letter-spacing: 6px;
+  font-size: 30px;
+  color: #FFA300;
+  display: inline-block;
+  vertical-align: 3px;
+  padding-left: 10px;
+}
+
+/* Buttons for Profile Page */
+/* Edit Profile Button */
+#edit-profile-button {
+  font-family: 'Ubuntu';
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 40px;
+  min-width: 0;
+  outline: none;
+  padding: 11px 13px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#edit-profile-button a {
+  color: #633A83;
+}
+#edit-profile-button:hover a {
+  color: #FFA300;
+}
+#edit-profile-button:hover {
+  background-color: #633A83;
+  color: #FFA300;
+  font-weight: bolder;
+  color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#edit-profile-button:active {
+  transform: translateY(0);
+}
+
+/* New Story Button */
+#new-story-button {
+  font-family: 'Ubuntu';
+  font-size: x-large;
+  font-weight: 1000;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#new-story-button a {
+  color: #633A83;
+}
+#new-story-button:hover a {
+  color: #FFA300;
+}
+#new-story-button:hover {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#new-story-button:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Author Card View Page */
+.auth-title-div {
+  text-align: -webkit-center;
+}
+#view-auth-title {
+  text-align: center;
+  width: 50%;
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+}
+#view-auth-title span {
+  color: #633A83;
+}
+
+.author-card {
+  margin: 8px;
+  border: 1px dashed #FFA300;
+  padding: 7px;
+  width: fit-content;
+}
+
+.author-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
+
+.author-card-text {
+  text-align: center;
+  font-size: x-large;
+  line-height: 1.5;
+}
+.author-card-text h4 {
+  margin: 0%;
+  padding: 0%;
+}
+.author-card-text #bio-summary {
+  font-size: small;
+}
+.author-card-text span {
+  color: #FFA300;
+}
+.author-card-text span:hover {
+  color: #633A83;
+}
+
+#all-authors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#all-authors .author-card {
+  flex-basis: 32%;
+  flex-grow: 1;
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Story View Styles */
+.story-wrapper {
+  text-align: -webkit-center;
+  margin: inherit;
+}
+
+#story-title-text {
+  text-align: center;
+  width: 50%;
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+}
+#story-author {
+  text-align: center;
+}
+#story-author span {
+  color: #FFA300;
+  font-weight: 500;
+}
+#story-pub-date {
+  text-align: center;
+}
+
+.story-content img {
+  max-width: 30rem;
+}
+
+.story-content p {
+  text-align: center;
+  max-width: 500px;
+}
+
+/* Edit & Delete Buttons */
+.story-buttons {
+  line-height: 2.5;
+}
+
+#edit-delete-buttons {
+  font-family: 'Ubuntu';
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 40px;
+  min-width: 0;
+  outline: none;
+  padding: 11px 13px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#edit-delete-buttons a {
+  color: #633A83;
+}
+#edit-delete-buttons:hover {
+  background-color: #633A83;
+  color: #FFA300;
+  font-weight: bolder;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#edit-delete-buttons:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Write New Story Form */
+.add-story-container {
+  margin: inherit;
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
+
+#write-story {
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+  text-align: center;
+}
+
+#submit-story-btn {
+  font-family: 'Ubuntu';
+  font-size: x-large;
+  font-weight: 1000;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#submit-story-btn a {
+  color: #633A83;
+}
+#submit-story-btn:hover a {
+  color: #FFA300;
+}
+#submit-story-btn:hover {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFA300;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#submit-story-btn:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Edit Story Form */
+#edit-story-pg-title {
+  text-align: center;
+}
+
+.edit-story-container {
+  margin: inherit;
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
+
+#edit-story-txt {
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+  text-align: center;
+}
+#edit-story-pg-title {
+  color: #633A83;
+}
+#edit-story-pg-title span {
+  color: #FFA300;
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Delete Story Form */
+.delete-story-container {
+  margin: inherit;
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
+
+#delete-story-title {
+  text-align: center;
+  color: #633A83;
+}
+
+#delete-text {
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 40px;
+  margin: 28px;
+  text-align: center;
+}
+#delete-text {
+  color: #633A83;
+}
+#delete-text span {
+  color: #FFA300;
+}
+
+/* Edit & Delete Story Button */
+#edit-delete-story-btn {
+  font-family: 'Ubuntu';
+  font-size: x-large;
+  font-weight: 1000;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#edit-delete-story-btn a {
+  color: #633A83;
+}
+#edit-delete-story-btn:hover a {
+  color: #FFA300;
+}
+#edit-delete-story-btn:hover {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFA300;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#edit-delete-story-btn:active {
+  transform: translateY(0);
 }

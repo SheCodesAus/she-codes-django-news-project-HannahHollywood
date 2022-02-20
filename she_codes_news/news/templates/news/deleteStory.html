@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Delete Story {% endblock %}
+{% block content %}
+
+<h1 id="delete-story-title"> Delete Story...</h1>
+
+<div class="delete-story-container">
+
+    <h3 id="delete-text">Are you sure you want to delete: { <span>{{ newsstory.title }}</span> } ?</h3>
+
+    <br/>
+    <div class="form-group">
+        <form method="POST">
+        {% csrf_token %}
+        <strong>Once it's gone, it's gone...!</strong><br/></br/>
+        <button id="edit-delete-story-btn" class="btn btn-secondary">Delete Story</button>
+    </div>
+</div>
+
+{% endblock %}

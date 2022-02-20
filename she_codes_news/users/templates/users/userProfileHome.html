@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+  <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'she_codes_news/styles.css' %}">
+{% endblock %} 
+
+{% block content %}
+
+<div class="user-profile-container">
+  <div class="profile-header">
+  <h5 id="prof-header-text">{ {{ customuser.username }}&#700;s } <span>Page!</span></h5> 
+  </div>
+
+  <div class="user-profile-info"> 
+    <ul class="user-input">
+      <li><img src="{{ customuser.avatar }}" alt="avatar"></li>
+      <li><span>{ {{ customuser.first_name }} {{ customuser.last_name }} }<span></li>
+      <li>Location <span>{ {{ customuser.location }} }</span></li>
+      <li>Follow <span><a 
+        id="socials"
+        href="{{ customuser.social_media_link }}" 
+        target="_blank">{ {{ customuser.username }} }</span></a>
+      </br> 
+        <a 
+        id="socials-icon"
+        href="{{ customuser.social_media_link }}" 
+        target="_blank">
+        <i class="fa-solid fa-circle-plus fa-beat" style="--fa-animation-duration: 2s;"></i>
+        </a>
+      </li>
+    </ul>
+
+    <div class="bio-section">
+      <h4 id="about-title">About <span>{ {{ customuser.username }} }</span></h4>
+      <p id="bio">
+        {{ customuser.bio }}
+      </p>
+      {% if request.user == customuser %}
+      <button id="edit-profile-button">
+        <a href="{% url 'users:editProfile' %}">Edit Profile</a></button>
+      {% else %}
+      {% endif %}
+    </div>
+  </div>
+
+  {% if request.user == customuser %}
+  <div class="user-add-story">
+    You can write new stories to be shared with other users here:
+    </br>
+    <button id="new-story-button">
+      <a href="{% url 'news:newStory' %}">Write New Story</a></button>
+  </div>
+  {% else %}
+  {% endif %}
+
+  <h2 class="dotted-line"></h2>
+
+  <h3 id="user-stories-list-title"><span>{ {{ customuser.username }}&#700;s }</span> Story History:</h3>
+  
+  <div class="profile-stories">
+    {% if customuser.newsstory_set.all %} 
+      {% for story in customuser.newsstory_set.all %} 
+        {% include "news/storyCard.html" with story=story position=forloop.counter %}
+        {% endfor %}
+    {% else %}
+      <p>No stories are available 😔</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
