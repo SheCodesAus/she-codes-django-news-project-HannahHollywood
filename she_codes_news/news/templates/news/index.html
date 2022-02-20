@@ -8,34 +8,54 @@
 
 {% block content %}
 
-<!-- Add a link to the form from the home page (Forms) -->
-{% if request.user.is_authenticated %}
-<a href="{% url 'news:newStory' %}">Write New Story</a>
-{% else %}
-{% endif %}
+<div class="news-page-container">
+  <div class="intro-div">
+    <h2 class="welcome-text">Welcome <span>{ Readers! }</span></h2>
+    <p id="intro-text">
+      There's lots going on in the world right now, 
+      so sit back and have a cuppa ☕️ while reading through some stories 
+      written by fellow technology enthusiasts! 👩‍💻 </br>
+      </br>
+      Or why not write your own story!? 🤩 
+      </br>
+    <p>
 
-<h2>Latest News</h2>
+      {% if request.user.is_authenticated %}
+        <button id="home-page-buttons"><a href="{% url 'news:newStory' %}">Write New Story</a></button>
+      {% else %}
+      <p id="text-if-not-auth">✏️
+        You'll need to be logged in!</br>
+        ..Don't have an <span>{ account }</span> ?
+      </br>
+      </br>
+        <button id="home-page-buttons"><a href="{% url 'users:createAccount' %}">Sign Up Today!</a></button>
+      </p>
+      {% endif %}
+  </div>
 
-<div id="latest-stories">
-  <!-- Use story card template -->
-  {% if latest_stories %} 
-    {% for story in latest_stories %} 
-      {% include "./storyCard.html" with story=story position=forloop.counter %} 
-      {% endfor %}
-  {% else %}
-  <p>No stories are available.</p>
-  {% endif %}
-</div>
+  <h2>Latest News</h2>
 
-<div id="all-stories">
-  <!-- Use story card template -->
-  {% if all_stories %} 
-    {% for story in all_stories %} 
-    {% include "./storyCard.html" with story=story %} 
-  {% endfor %} 
+  <div id="latest-stories">
+    <!-- Use story card template -->
+    {% if latest_stories %} 
+      {% for story in latest_stories %} 
+        {% include "./storyCard.html" with story=story position=forloop.counter %} 
+        {% endfor %}
     {% else %}
-  <p>No stories are available.</p>
-  {% endif %}
+    <p>No stories are available.</p>
+    {% endif %}
+  </div>
+
+  <div id="all-stories">
+    <!-- Use story card template -->
+    {% if all_stories %} 
+      {% for story in all_stories %} 
+      {% include "./storyCard.html" with story=story %} 
+    {% endfor %} 
+      {% else %}
+    <p>No stories are available.</p>
+    {% endif %}
+  </div>
 </div>
 
 {% endblock %}

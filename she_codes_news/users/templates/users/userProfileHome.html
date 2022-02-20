@@ -11,7 +11,7 @@
 
 <div class="user-profile-container">
   <div class="profile-header">
-  <h5 id="prof-header-text">{ {{ customuser.username }}&#700;s } Page!</h5> 
+  <h5 id="prof-header-text">{ {{ customuser.username }}&#700;s } <span>Page!</span></h5> 
   </div>
 
   <div class="user-profile-info"> 
@@ -25,7 +25,7 @@
         target="_blank">{ {{ customuser.username }} }</span></a>
       </br> 
         <a 
-        id="socials"
+        id="socials-icon"
         href="{{ customuser.social_media_link }}" 
         target="_blank">
         <i class="fa-solid fa-circle-plus fa-beat" style="--fa-animation-duration: 2s;"></i>
@@ -39,7 +39,8 @@
         {{ customuser.bio }}
       </p>
       {% if request.user == customuser %}
-      <button class="profile-page-buttons"><a id="edit-button" href="{% url 'users:editProfile' %}">Edit Profile</a></button>
+      <button id="edit-profile-button">
+        <a href="{% url 'users:editProfile' %}">Edit Profile</a></button>
       {% else %}
       {% endif %}
     </div>
@@ -49,7 +50,8 @@
   <div class="user-add-story">
     You can write new stories to be shared with other users here:
     </br>
-    <button class="profile-page-buttons"><a href="{% url 'news:newStory' %}">Write New Story</a></button>
+    <button id="new-story-button">
+      <a href="{% url 'news:newStory' %}">Write New Story</a></button>
   </div>
   {% else %}
   {% endif %}

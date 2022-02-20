@@ -11,7 +11,7 @@
 
     <div class="story-card-text">
       <h3><a href="{% url 'news:story' story.id %}">{{ story.title }}</a></h3>
-      <h4><a href="{% url 'users:profile' story.author.id %}">{{ story.author }}</a></h4>
+      <h4><a href="{% url 'users:profile' story.author.id %}"><span>{ {{ story.author }} }</span></a></h4>
       <h4>{{ story.pub_date }}</h4>
     </div>
 </div>

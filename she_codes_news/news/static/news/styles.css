@@ -11,6 +11,16 @@
     object-fit: cover;
 }
 
+.story-card-text a {
+    color: #000;
+}
+.story-card-text span {
+    color: #FFA300;
+}
+.story-card-text span:hover {
+    color: #633A83;
+}
+
 /* #latest-stories {
     display: flex;
     flex-wrap: wrap;
@@ -89,7 +99,6 @@
 }
 
 /* All_Stories Cards */
-
 #all-stories {
     display: flex;
     flex-wrap: wrap;
