@@ -413,25 +413,33 @@ nav span {
   object-fit: contain;
 }
 
+.author-card-text {
+  text-align: center;
+  font-size: x-large;
+  line-height: 1.5;
+}
+.author-card-text h4 {
+  margin: 0%;
+  padding: 0%;
+}
+.author-card-text #bio-summary {
+  font-size: small;
+}
+.author-card-text span {
+  color: #FFA300;
+}
+.author-card-text span:hover {
+  color: #633A83;
+}
+
 #all-authors {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
 #all-authors .author-card {
   flex-basis: 32%;
   flex-grow: 1;
-}
-
-#author-content {
-  text-align: justify;
-}
-
-#author-content img {
-  float: right;
-  margin: 0 0 10px 10px;
-  width: 50%;
 }
 
 /* --------------------------------------------------------- */

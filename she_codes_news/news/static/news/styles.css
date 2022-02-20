@@ -57,24 +57,6 @@
 }
 
 /* --------------------------------------------------------- */
-
-/* Author Story Cards */
-.author-card-text img {
-    float: right;
-    margin: 0 0 10px 10px;
-    width: 50%;
-}
-.author-card-text a {
-    color: #000;
-}
-.author-card-text span {
-    color: #FFA300;
-}
-.author-card-text span:hover {
-    color: #633A83;
-}
-
-/* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 
 /* Stories to Display on Profile Page */
