@@ -2,9 +2,11 @@
 
 {% block content %}
 
-  <h2>Edit Your Author Profile</h2>
-  <h3>Welcome {{ user.username }} 👩‍💻</h3>
-  <p>Complete your profile by uploading a photo and telling other budding authors a little bit more about yourself!</p>
+<h3 id="welcome-user">Welcome {{ user.username }} 👩‍💻</h3>
+<p id="edit-page-txt">Complete your profile by uploading a photo and telling other budding authors a little bit more about yourself!</p>
+
+<div class="edit-act-container">
+  <h2 id="edit-account-title">Edit Your Profile </br> ✏️</h2>
   <form method="post">
     {% csrf_token %}
     {% for field in form %}
@@ -19,10 +21,11 @@
         {% endfor %}
       </p>
     {% endfor %}
-    <button type="submit" name="confirm">Confirm Profile Info</button>
+    <button id="confirm-edit-profile-btn" type="submit" name="confirm">Confirm Profile Info</button>
     </br>
   </br>
-  <button type="submit" name="skip">Skip</button>
+  <button id="skip-edit-btn" type="submit" name="skip">Skip</button>
   </form>
+</div>
 
 {% endblock %}

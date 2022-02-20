@@ -2,16 +2,19 @@
 {% block title %} Edit Story {% endblock %}
 {% block content %}
 
-<h1> Edit Post...</h1>
-<br/><br/>
-<h3>Edit: {{ newsstory.title }}</h3>
+<h3 id="edit-story-pg-title">You are Editing: <span>{ {{ newsstory.title }} }<span></h3>
+
+<div class="edit-story-container">
+<h1 id="edit-story-txt"> Edit Post...</br> ✏️</h1>
 
 <br/>
 <div class="form-group">
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-secondary">Edit Story</button>
+        <button id="edit-delete-story-btn" class="btn btn-secondary">Edit Story</button>
     </div>
+
+</div>
 
 {% endblock %}

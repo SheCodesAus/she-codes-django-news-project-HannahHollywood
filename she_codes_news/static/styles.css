@@ -116,16 +116,199 @@ nav span {
   touch-action: manipulation;
   will-change: transform;
 }
-#login-create-button {
+#login-create-button a {
   color: #633A83;
 }
+#login-create-button:hover a {
+  color: #FFA300;
+}
 #login-create-button:hover {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFA300;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#login-create-button:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Sign Up Form */
+.sign-up-container {
+  margin: inherit;
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
+
+#sign-up {
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+  text-align: center;
+}
+
+#create-account-btn {
+  font-family: 'Ubuntu';
+  font-size: x-large;
+  font-weight: 1000;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#create-account-btn a {
+  color: #633A83;
+}
+#create-account-btn:hover a {
+  color: #FFA300;
+}
+#create-account-btn:hover {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFA300;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#create-account-btn:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Edit User Profile Form */
+#welcome-user {
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+  text-align: center;
+}
+
+#edit-page-txt {
+  text-align: center;
+}
+
+#edit-account-title {
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 38px;
+  margin: 28px;
+  text-align: center;
+}
+
+.edit-act-container {
+  margin: inherit;
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
+
+#confirm-edit-profile-btn {
+  font-family: 'Ubuntu';
+  font-size: x-large;
+  font-weight: 1000;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#confirm-edit-profile-btn a {
+  color: #633A83;
+}
+#confirm-edit-profile-btn:hover a {
+  color: #FFA300;
+}
+#confirm-edit-profile-btn:hover {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFA300;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#confirm-edit-profile-btn:active {
+  transform: translateY(0);
+}
+
+/* Skip Button for Edit Profile Page */
+#skip-edit-btn {
+  font-family: 'Ubuntu';
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 40px;
+  min-width: 0;
+  outline: none;
+  padding: 11px 13px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#skip-edit-btn a {
+  color: #633A83;
+}
+#skip-edit-btn:hover a {
+  color: #FFA300;
+}
+#skip-edit-btn:hover {
   background-color: #633A83;
   color: #FFA300;
   font-weight: bolder;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
 }
-#login-create-button:active {
+#skip-edit-btn:active {
   transform: translateY(0);
 }
 
@@ -574,5 +757,170 @@ nav span {
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
 }
 #edit-delete-buttons:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Write New Story Form */
+.add-story-container {
+  margin: inherit;
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
+
+#write-story {
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+  text-align: center;
+}
+
+#submit-story-btn {
+  font-family: 'Ubuntu';
+  font-size: x-large;
+  font-weight: 1000;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#submit-story-btn a {
+  color: #633A83;
+}
+#submit-story-btn:hover a {
+  color: #FFA300;
+}
+#submit-story-btn:hover {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFA300;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#submit-story-btn:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Edit Story Form */
+#edit-story-pg-title {
+  text-align: center;
+}
+
+.edit-story-container {
+  margin: inherit;
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
+
+#edit-story-txt {
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 45px;
+  margin: 28px;
+  text-align: center;
+}
+#edit-story-pg-title {
+  color: #633A83;
+}
+#edit-story-pg-title span {
+  color: #FFA300;
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Delete Story Form */
+.delete-story-container {
+  margin: inherit;
+  display: flex;
+  align-items: center; 
+  justify-content: center
+}
+
+#delete-story-title {
+  text-align: center;
+  color: #633A83;
+}
+
+#delete-text {
+  text-decoration: none;
+  color: #FFA300;
+  font-size: 40px;
+  margin: 28px;
+  text-align: center;
+}
+#delete-text {
+  color: #633A83;
+}
+#delete-text span {
+  color: #FFA300;
+}
+
+/* Edit & Delete Story Button */
+#edit-delete-story-btn {
+  font-family: 'Ubuntu';
+  font-size: x-large;
+  font-weight: 1000;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #633A83;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #633A83;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+#edit-delete-story-btn a {
+  color: #633A83;
+}
+#edit-delete-story-btn:hover a {
+  color: #FFA300;
+}
+#edit-delete-story-btn:hover {
+  background-color: #633A83;
+  font-weight: bolder;
+  color: #FFA300;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+#edit-delete-story-btn:active {
   transform: translateY(0);
 }

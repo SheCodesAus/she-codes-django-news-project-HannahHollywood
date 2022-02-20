@@ -2,7 +2,8 @@
 
 {% block content %}
 
-  <h2>Sign Up</h2>
+<div class="sign-up-container">
+  <h2 id="sign-up">Sign Up </br> ✏️</h2>
   <form method="post">
     {% csrf_token %}
     {% for field in form %}
@@ -17,7 +18,8 @@
         {% endfor %}
       </p>
     {% endfor %}
-    <button type="submit">Create Account</button>
+    <button id="create-account-btn" type="submit">Create Account</button>
   </form>
+<div>
   
 {% endblock %}
