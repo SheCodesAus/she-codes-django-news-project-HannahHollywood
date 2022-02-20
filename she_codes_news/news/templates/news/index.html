@@ -33,29 +33,35 @@
       {% endif %}
   </div>
 
-  <h2>Latest News</h2>
+  <div class"latest-news-div">
+    <h2 class="dotted-line"></h2>
+    <h2 id="news-header">Latest News</h2>
 
-  <div id="latest-stories">
-    <!-- Use story card template -->
-    {% if latest_stories %} 
-      {% for story in latest_stories %} 
-        {% include "./storyCard.html" with story=story position=forloop.counter %} 
-        {% endfor %}
-    {% else %}
-    <p>No stories are available.</p>
-    {% endif %}
-  </div>
-
-  <div id="all-stories">
-    <!-- Use story card template -->
-    {% if all_stories %} 
-      {% for story in all_stories %} 
-      {% include "./storyCard.html" with story=story %} 
-    {% endfor %} 
+    <div id="latest-stories">
+      <!-- Use story card template -->
+      {% if latest_stories %} 
+        {% for story in latest_stories %} 
+          {% include "./storyCard.html" with story=story position=forloop.counter %} 
+          {% endfor %}
       {% else %}
-    <p>No stories are available.</p>
-    {% endif %}
-  </div>
+      <p>No stories are available 😔</p>
+      {% endif %}
+    </div>
+
+<div class"all-news-div">
+  <h2 class="dotted-line-2"></h2>
+    <h2 id="news-header">All News Stories!</h2>
+      <div id="all-stories">
+        <!-- Use story card template -->
+        {% if all_stories %} 
+          {% for story in all_stories %} 
+          {% include "./storyCard.html" with story=story %} 
+        {% endfor %} 
+          {% else %}
+        <p>No stories are available 😔</p>
+        {% endif %}
+      </div>
+    </div>
 </div>
 
 {% endblock %}

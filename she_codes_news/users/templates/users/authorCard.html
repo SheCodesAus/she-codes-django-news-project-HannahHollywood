@@ -7,7 +7,7 @@
         {% endif %}
 
     <div class="author-card-text">
-        <h4><a href="{% url 'users:profile' author.id %}">{{ author.username }}</h4>
+        <h4><a href="{% url 'users:profile' author.id %}"><span>{{ author.username }}<span></h4>
         <h4>{{ author.location }}</h4>
     </div>
 </div>

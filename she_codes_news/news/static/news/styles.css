@@ -1,18 +1,19 @@
+/* Main Story Cards */
 .story-card {
     margin: 8px;
-    border: 1px solid #000;
     padding: 7px;
     width: fit-content;
+    border: 2px dashed #FFA300;
+    text-align: center;
 }
-
 .story-card img {
     width: 100%;
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
 }
-
 .story-card-text a {
     color: #000;
+    text-align: center;
 }
 .story-card-text span {
     color: #FFA300;
@@ -21,13 +22,92 @@
     color: #633A83;
 }
 
-/* #latest-stories {
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Latest Stories Styles */
+#latest-stories {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-} */
+}
 
+#latest-stories .story-card {
+    flex-basis: 32%;
+    flex-grow: 1;
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* All_Stories Cards */
+#all-stories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#all-stories .story-card {
+    flex-basis: 32%;
+    flex-grow: 1;
+}
+
+.story-card {
+    color: #000;
+}
+
+/* --------------------------------------------------------- */
+
+/* Author Story Cards */
+.author-card-text img {
+    float: right;
+    margin: 0 0 10px 10px;
+    width: 50%;
+}
+.author-card-text a {
+    color: #000;
+}
+.author-card-text span {
+    color: #FFA300;
+}
+.author-card-text span:hover {
+    color: #633A83;
+}
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Stories to Display on Profile Page */
 .profile-stories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  #profile-stories .story-card {
+    margin: 8px;
+    padding: 7px;
+    width: fit-content;
+  }
+  
+  #profile-stories {
+    text-align: justify;
+  }
+  
+  #profile-stories img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+  }
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* Keeping to implement later!! */
+
+/* .profile-stories {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -36,16 +116,23 @@
         "left-1 right-1"
         "left-1 right-2"
         "left-1 right-3";
-    max-height: 500px;
-}
+    width: fit-content;
+} */
 
-#latest-stories {
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* GRID FORMAT */
+/* Keeping to implement later!! */
+
+/* #latest-stories {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 1px 1px;
     grid-template-areas: "left-1 right-1" "left-1 right-2" "left-1 right-3";
-    max-height: 500px;
+    max-height: fit-content;
 }
 
 .story-card {
@@ -78,44 +165,30 @@
     height: 100%;
 }
 
+#story-card-2 .story-card-text a,
+#story-card-3 .story-card-text a,
+#story-card-4 .story-card-text a {
+    text-align: center;
+}
+
 #story-card-2 .story-card-text h3,
 #story-card-3 .story-card-text h3,
 #story-card-4 .story-card-text h3 {
     font-size: 16px;
+    text-align: center;
 }
 
 #story-card-2 .story-card-text h4,
 #story-card-3 .story-card-text h4,
 #story-card-4 .story-card-text h4 {
     font-size: 12px;
+    text-align: center;
 }
 
 #story-card-2 img,
 #story-card-3 img,
 #story-card-4 img {
-    width: 33%;
-    height: 100%;
-    margin-right: 5px;
-}
-
-/* All_Stories Cards */
-#all-stories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-#all-stories .story-card {
-    flex-basis: 32%;
-    flex-grow: 1;
-}
-
-#author-card-text {
-    text-align: justify;
-}
-
-#author-card-text img {
-    float: right;
-    margin: 0 0 10px 10px;
-    width: 50%;
-}
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+} */
