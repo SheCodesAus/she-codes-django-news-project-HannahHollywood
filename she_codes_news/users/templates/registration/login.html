@@ -1,8 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2 id="login-text">Login</h2>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
+<div class="login-form">
+  <h2 id="login-text">{ <span>Login</span> }</h2>
+  <form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button id="login-create-button" type="submit">Login</button>
+  </form>
+
+  <h2>Don't have an <span>{ account }</span> yet?</h2>
+
+  <button id="login-create-button"> <a href="{% url 'users:createAccount' %}">Create Account</a></button>
+</div>
+
 {% endblock %}

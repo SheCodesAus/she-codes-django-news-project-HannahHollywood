@@ -8,27 +8,32 @@
 
 {% block content %}
 
-<div id="story-wrapper">
-  <h2>{{ story.title }}</h2>
-  <h4>{{ story.author }}</h4>
-  <h4>{{ story.pub_date }}</h4>
+<div class="story-wrapper">
+  <h2 id="story-title-text">{{ story.title }}</h2>
 
-  <div id="story-content">
+  <div class="story-content">
     {% if story.image %}
     <img src="{{ story.image }}" alt="image">
 
     {% else %}
     <img src="{% static '/news/images/placeholder-5.jpg' %}" />
     {% endif %}
-    
+
+    </br>
+
+    <h4 id="story-author"><a href="{% url 'users:profile' story.author.id %}">Written by: <span>{ {{ story.author }} }</span></a></h4>
+    <h4 id="story-pub-date">({{ story.pub_date }})</h4>
+
     {{ story.content|linebreaks }}
   </div>
 
-{% if request.user == story.author %}
-    <a href="{% url 'news:editStory' story.id %}">Edit Story</a> <br/>
-    <a href="{% url 'news:deleteStory' story.id %}">Delete</a> <br/>
-{% else %}
-{% endif %}
+  <div class="story-buttons">
+  {% if request.user == story.author %}
+      <a id="edit-delete-buttons" href="{% url 'news:editStory' story.id %}">Edit Story</a> <br/>
+      <a id="edit-delete-buttons" href="{% url 'news:deleteStory' story.id %}">Delete</a> <br/>
+  {% else %}
+  {% endif %}
+  </div>
 
 </div>
 
